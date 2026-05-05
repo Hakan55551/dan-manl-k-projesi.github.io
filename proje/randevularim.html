@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Randevularım — Randevu Sistemi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="randevularimYukle()">
+
+<div class="navbar"></div>
+
+<div class="container">
+
+  <button class="back-btn" onclick="window.location.href='dashboard.html'">
+    ← Geri Dön
+  </button>
+
+  <div class="card">
+    <div class="section-title">📋 Randevularım</div>
+    <div class="randevu-list" id="liste"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

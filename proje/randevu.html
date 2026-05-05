@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Randevu Oluştur — Randevu Sistemi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="randevuSayfasiYukle()">
+
+<div class="navbar"></div>
+
+<div class="container">
+
+  <button class="back-btn" onclick="window.location.href='dashboard.html'">
+    ← Geri Dön
+  </button>
+
+  <div class="card">
+    <div id="alert" class="alert"></div>
+
+    <!-- Hoca Seç -->
+    <div class="section-title">👨‍🏫 Hoca Seç</div>
+    <div class="hoca-grid" id="hoca-grid"></div>
+
+    <div class="divider"></div>
+
+    <!-- Tarih -->
+    <div class="section-title">📅 Tarih Seç</div>
+    <div class="form-group">
+      <input
+        type="date"
+        id="tarih"
+        class="form-control"
+        onchange="saatleriGoster()"
+        style="max-width:280px;"
+      >
+    </div>
+
+    <!-- Saatler -->
+    <div id="saat-bolum" style="display:none;">
+      <div class="divider"></div>
+      <div class="section-title">🕐 Müsait Saatler</div>
+      <div class="saat-grid" id="saatler"></div>
+    </div>
+
+    <!-- Gönder -->
+    <div style="margin-top:28px;">
+      <button class="btn btn-accent" onclick="randevuOlustur()" style="min-width:200px;">
+        📨 Randevu Talebi Gönder
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
