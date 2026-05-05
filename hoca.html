@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoca Paneli — Randevu Sistemi</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hoca-profil {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: var(--radius);
+      color: white;
+    }
+    .hoca-profil .avatar-lg {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .hoca-profil h3 { font-size: 1.1rem; font-weight: 700; }
+    .hoca-profil p  { font-size: 0.85rem; opacity: 0.8; }
+
+    .filtre-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .filtre-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      background: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--text-muted);
+    }
+    .filtre-btn:hover { border-color: var(--primary-light); color: var(--primary); }
+    .filtre-btn.active-filtre {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+  </style>
+</head>
+<body onload="hocaPaneliYukle()">
+
+<div class="navbar"></div>
+
+<div class="container">
+
+  <div class="hoca-profil">
+    <div class="avatar-lg">👨‍🏫</div>
+    <div>
+      <h3 id="hoca-ad"></h3>
+      <p id="hoca-brans"></p>
+    </div>
+  </div>
+
+  <div class="stats-row" style="margin-bottom:28px;">
+    <div class="stat-card">
+      <div class="stat-num" id="stat-toplam">0</div>
+      <div class="stat-label">Toplam Talep</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="stat-bekliyor">0</div>
+      <div class="stat-label">Bekliyor</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="stat-onaylandi">0</div>
+      <div class="stat-label">Onaylandı</div>
+    </div>
+  </div>
+
+  <div class="card">
+    
+    <div id="alert" class="alert"></div>
+
+    <div class="section-title">📋 Randevu Talepleri</div>
+
+    <div class="filtre-bar">
+      <button class="filtre-btn active-filtre" onclick="filtreUygula('hepsi')">Tümü</button>
+      <button class="filtre-btn" onclick="filtreUygula('bekliyor')">⏳ Bekliyor</button>
+      <button class="filtre-btn" onclick="filtreUygula('onaylandi')">✔ Onaylandı</button>
+      <button class="filtre-btn" onclick="filtreUygula('reddedildi')">✖ Reddedildi</button>
+      
+      <button class="filtre-btn" onclick="ayarlariGoster()" style="margin-left:auto; border-color:var(--accent);">⚙️ Çalışma Saatlerim</button>
+    </div>
+
+    <div id="ayarlar-bolum" style="display:none; margin-bottom: 24px; padding: 20px; background: #f8fafc; border-radius: 12px; border: 1px dashed var(--border);">
+       <h4 style="margin-bottom: 12px; font-size: 1rem;">Müsait Olduğunuz Saatleri Seçin</h4>
+       <div id="saat-secenekleri" class="saat-grid"></div>
+       <button class="btn btn-primary" style="margin-top:16px;" onclick="saatleriKaydet()">Ayarları Kaydet</button>
+    </div>
+
+    <div class="randevu-list" id="liste"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

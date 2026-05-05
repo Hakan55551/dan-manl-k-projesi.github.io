@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giriş — Danışman Randevu Sistemi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+  <div class="login-card">
+
+    <div class="login-logo">
+      <div class="icon">📅</div>
+      <h1>Randevu Sistemi</h1>
+      <p>Danışman Randevu Yönetim Platformu</p>
+    </div>
+
+    <div id="alert" class="alert"></div>
+
+    <div class="form-group">
+      <label for="email">Kullanıcı Adı</label>
+      <input
+        type="text"
+        id="email"
+        class="form-control"
+        placeholder="Kullanıcı adınızı girin"
+        autocomplete="username"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="sifre">Şifre</label>
+      <input
+        type="password"
+        id="sifre"
+        class="form-control"
+        placeholder="Şifrenizi girin"
+        autocomplete="current-password"
+      >
+    </div>
+
+    <button class="btn btn-primary btn-full" onclick="girisYap()" style="margin-top:8px;">
+      Giriş Yap →
+    </button>
+
+    <div class="divider"></div>
+
+    <div style="background:#f8fafc; border-radius:10px; padding:14px 16px; font-size:0.82rem; color:#64748b; line-height:1.7;">
+      <strong style="display:block; margin-bottom:4px; color:#475569;">Test Hesapları</strong>
+      🎓 Öğrenci: <code>ogrenci1</code> / <code>123</code><br>
+      👨‍🏫 Hoca: <code>hoca1</code> / <code>123</code>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

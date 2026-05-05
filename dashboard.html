@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Öğrenci Paneli — Randevu Sistemi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="dashboardYukle()">
+
+<div class="navbar">
+  <!-- navbarRender tarafından doldurulur -->
+</div>
+
+<div class="container">
+
+  <div class="dashboard-header">
+    <h2>Hoş geldin, <span id="hosgeldin-ad"></span> 👋</h2>
+    <p>Danışman hocanla randevu oluştur veya mevcut randevularını takip et.</p>
+  </div>
+
+  <!-- İstatistikler -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num" id="stat-toplam">0</div>
+      <div class="stat-label">Toplam Randevu</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="stat-bekliyor">0</div>
+      <div class="stat-label">Bekliyor</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="stat-onaylandi">0</div>
+      <div class="stat-label">Onaylandı</div>
+    </div>
+  </div>
+
+  <!-- Aksiyon Kartları -->
+  <div class="dashboard-grid">
+    <div class="action-card" onclick="randevuGit()">
+      <div class="card-icon blue">📅</div>
+      <h3>Randevu Al</h3>
+      <p>Müsait hocalardan uygun bir saat seçerek randevu talebi oluştur.</p>
+    </div>
+
+    <div class="action-card" onclick="randevularimGit()">
+      <div class="card-icon amber">📋</div>
+      <h3>Randevularım</h3>
+      <p>Tüm randevu taleplerinizi görüntüle ve durumlarını takip et.</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
